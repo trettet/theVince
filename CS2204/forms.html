@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <style>
+        .headtitle {
+            background-color: #60A96D;
+            color: #FFFFFF;
+            border-top: 3px solid #062;
+            height: 45px;
+        }
+        
+        .rowmenu {
+            margin-top: 10px;
+        }
+        
+        .rowmenu a:hover {
+            color: #FFFFFF;
+        }
+        
+        .breadcrumb {
+            background-color: #cfc;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #aea;
+            border-radius: 0px;
+        }
+        
+        .breadcrumb > li + li:before {
+            color: #358244;
+            content: "> ";
+            padding: 0 0;
+        }
+        
+        .breadcrumb a {
+            color: #358244;
+        }
+        
+        .announce {
+            background: #cfc;
+            padding: 6px 10px;
+            border-radius: 1px;
+            box-shadow: 0px 0px 2px #999;
+            margin-top: 5px;
+        }
+        
+        .announce h5 {
+            color: #484;
+        }
+        
+        .announce p {
+            color: #888;
+        }
+        
+        .alert {
+            border-radius: 0;
+            padding: 8px;
+            margin-bottom: 0;
+        }
+        
+        .pagination {
+            margin-top: 5px;
+            margin-left: 79%;
+        }
+        
+        .pagination > li a {
+            padding: 0;
+            border: 0;
+            margin: 0px 3px;
+            font-weight: bold;
+            color: #0B7A0B;
+        }
+        
+        .pagination > li .active {
+            color: #000000;
+        }
+        
+        .pagination > li .active:hover {
+            color: #000000;
+        }
+        
+        .pagination > li a:hover {
+            background-color: #FFFFFF;
+            color: #0B7A0B;
+        }
+        
+    </style>
+</head>
+<body>
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12 headtitle'>
+        <div class='rowmenu'>
+            <span class='h3'><strong>LowEndTalk</strong></span>&nbsp&nbsp<a href='http://lowendtalk.com' class='h6'><strong>Discussions</strong></a>
+        </div>
+        </div>
+    </div>
+    
+        
+    <!-- contents -->
+    
+    <div class='row'>
+        <div class='col-md-9'>
+            <div class='row'>
+            
+                <div class='col-md-12'>
+                    <ol class="breadcrumb">
+                      <li><a href="#">Home</a></li>
+                      <li>LowEndTalk</li>
+                    </ol>
+                </div>
+                
+                <div class='col-md-12'>
+                    <div class='alert alert-info'>New on LowEndTalk? Please read our 'Community Rules' by clicking on it in the right menu!</div>
+                </div>
+                
+                <div class='col-md-12'>
+                
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li><a href="#" class='active'>1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="#">761</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                
+                </div>
+            </div>
+        </div>
+        
+        <div class='col-md-3'>
+            <div class='announce'>
+                <h5><strong>Howdy, Stranger!</strong></h5>
+                <p>It looks like you're new here. If you want to get involved, click one of these buttons!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
