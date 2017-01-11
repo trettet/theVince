@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .box {
+                height: 128px;
+                width: 128px;
+                border: 2px solid black;
+                margin: 5px;
+                display: inline-block;
+                background-size: 100%;
+            }
+            
+            .koala {
+                background-image: url("img/1.jpg");
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <br>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <br>
+        <div class="box koala"></div>
+        <div class="box koala"></div>
+        <div class="box koala"></div>
+        <div class="box koala"></div>
+        <div class="box koala"></div>
+    </body>
+</html>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    var prev;
+    var select;
+    $(document).ready(function(){
+        select = 0;
+        
+        $(".box").on("click", function() {
+            if (prev != null) {
+                $(prev).css("border-color", "black");
+                $(prev).css("background-image", "none");
+            }
+            
+            prev = $(this);
+            $(this).css("border-color", "#ff7b00");
+            $(this).css("background-image", "url(\"img/1.jpg\")");
+        });
+    });
+</script>
