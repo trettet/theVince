@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>LowEndTalk</title>
     <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/sprites.css'>
+    <link rel='shortcut icon' href='LowEndTalk.ico' type='image/x-icon'/>
     <style>
+        body {
+            background-color: #cfc;
+            border-top: 3px solid #062;
+        }
         .headtitle {
             background-color: #60A96D;
             color: #FFFFFF;
-            border-top: 3px solid #062;
             height: 45px;
+            padding-left: 16px;
+            padding-top: 10px;
+            margin: 0 -25px;
+            margin-bottom: 10px;
         }
         
-        .rowmenu {
-            margin-top: 10px;
-        }
-        
-        .rowmenu a:hover {
-            color: #FFFFFF;
+        .headtitle > a:hover {
+            color: white;
+            text-decoration: underline;
         }
         
         .breadcrumb {
@@ -32,7 +39,7 @@
             padding: 0 0;
         }
         
-        .breadcrumb a {
+        .breadcrumb > a {
             color: #358244;
         }
         
@@ -42,6 +49,7 @@
             border-radius: 1px;
             box-shadow: 0px 0px 2px #999;
             margin-top: 5px;
+            margin-bottom: 10px;
         }
         
         .announce h5 {
@@ -60,7 +68,7 @@
         
         .pagination {
             margin-top: 5px;
-            margin-left: 79%;
+            margin-left: 78%;
         }
         
         .pagination > li a {
@@ -84,13 +92,217 @@
             color: #0B7A0B;
         }
         
+        .postTag {
+            padding: 4px;
+            border-radius: 3px;
+            font-size: 11.5px;
+        }
+        
+        .postcont {
+            padding: 0 10px;
+            font-size: 11.5px;
+            color: #70727c;
+        }
+        
+        .announce1 {
+            background-color: #777777;
+            color: white;
+        }
+        
+        .postTagCat {
+            border: 1px solid #aea;
+            padding: 4px;
+            border-radius: 3px;
+            font-size: 11.5px;
+            background: #b0f0b0;
+            color: #484;
+            float: right;
+            margin-top: 15px;
+        }
+        
+        .postTagCat:hover {
+            background-color: #f0fff0;
+        }
+        
+        hr {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .postcontSpecial {
+            margin-left: -25px;
+        }
+        
+        .postTitle > a {
+            font-weight: bold;
+        }
+        
+        a {
+            color: #358244;
+        }
+        
+        a:hover {
+            color: #ff0084;
+            text-decoration: none;
+        }
+        
+        
+        .profpic > img{
+            height: 40px;
+            width: 40px;
+        }
+        
+        .content {
+            background-color: #fff;
+            border-color: #aea;
+            border-radius: 0 0 20px 20px;
+            border-style: solid;
+            border-width: 0;
+            box-shadow: 0 0 8px #aaa;
+            margin: 0 auto 30px auto;
+            padding: 0 25px;
+        }
+        
+        .btn {
+            padding: 5px;
+            box-shadow: 0px 0px 2px #999;
+            text-shadow: 0 1px 0 #fff;
+            border: 1px solid #999;
+            color: #02475A;
+            background: -webkit-gradient(linear, center bottom, center top, from(#cccccc), to(#ffffff));
+            font-size: 12px;
+        }
+        
+        .btn:hover {
+            color: #111;
+            border: 1px solid #666;
+        }
+        
+        #oid {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .table {
+            background-color: white;
+        }
+        
+        .Sprite {
+            margin-right: 3px;
+        }
+        
+        td > a {
+            font-size: 13px;
+        }
+        
+        .table {
+            margin-bottom: 0px;
+        }
+        
+        .table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td{
+            padding: 2px 4px;
+        }
+        
+        .viewcat {
+            float: right;
+            vertical-align: baseline;
+            padding: 3px;
+            border-radius: 3px;
+            font-size: 10px;
+            background: #444;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+        }
+        
+        .categories a {
+            color: #358244;
+        }
+        
+        .categories a:hover {
+            color: #358244;
+        }
+        
+        h5.nomarg {
+            margin: 3px 0;
+        }
+        
+        .sidetag ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        
+        .sidetag li {
+            display: inline-block;
+            background: #F7F7F7;
+            padding: 3px;
+            line-height: 100%;
+            border-radius: 3px;
+            border: solid 1px #CCCCCC;
+            border-color: rgba(0, 0, 0, .2);
+            margin: 2px 0;
+        }
+        
+        .poptagview {
+            background: #444;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 3px;
+            color: #fff;
+            font-size: 80%;
+            font-weight: normal;
+            padding: 3px;
+            margin-left: 2px;
+        }
+        
+        .footer {
+            background-color: #444;
+            border-radius: 0 0 19px 19px;
+            clear: both;
+            margin: 2px 0;
+            padding: 4px 9px;
+            font-size: 13px;
+            color: #ddd;
+            line-height: 1;
+            margin: 0 -25px;
+            padding: 10px;
+        }
+        
+        .aside > .btn {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#d9d9d9));
+            box-shadow: 0 0 0 #000;
+            color: black;
+        }
+        
+        .twit {
+            width: 16px;
+            height: 13px;
+            float: left;
+            margin-top: 3px;
+            margin-right: 2px;
+            background: transparent url(img/twitter.png) 0 0 no-repeat;
+        }
+        
+        .aside {
+            margin-top: -4px;
+            margin-right: 18px;
+            padding: 0;
+            float: right;
+        }
+        
     </style>
 </head>
 <body>
 <div class='container'>
+    <div class="content">
     <div class='row'>
-        <div class='col-md-12 headtitle'>
-        <div class='rowmenu'>
+        <div class='col-md-12'>
+        <div class='headtitle'>
             <span class='h3'><strong>LowEndTalk</strong></span>&nbsp&nbsp<a href='http://lowendtalk.com' class='h6'><strong>Discussions</strong></a>
         </div>
         </div>
@@ -131,7 +343,7 @@
                         <li><a href="#">6</a></li>
                         <li><a href="#">7</a></li>
                         <li><a href="#">...</a></li>
-                        <li><a href="#">761</a></li>
+                        <li><a href="#">763</a></li>
                         <li>
                           <a href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
@@ -139,8 +351,516 @@
                         </li>
                       </ul>
                     </nav>
-                
                 </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/001.jpg'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Rules for selling on LowEndTalk</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1'>Announcement</span>
+                                    <span class='postcont'><a href="#">jarland</a></span>
+                                    <span class='postcont views'>3.7k views</span>
+                                    <span class='postcont comments'>60 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">asiadev</a></span>
+                                    <span class='postcont date'>December 7</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Announcements</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/002.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Inviting LEB Offers</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1'>Announcement</span>
+                                    <span class='postcont'><a href="#">jbiloh</a></span>
+                                    <span class='postcont views'>3.3k views</span>
+                                    <span class='postcont comments'>66 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">ipasces6</a></span>
+                                    <span class='postcont date'>December 1</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Announcements</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/001.jpg'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Q3 2016 Top Prodiver Poll Results</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1'>Announcement</span>
+                                    <span class='postcont'><a href="#">jarland</a></span>
+                                    <span class='postcont views'>3.9k views</span>
+                                    <span class='postcont comments'>48 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">hynds</a></span>
+                                    <span class='postcont date'>November 29</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Announcements</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/001.jpg'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Don't get scammed</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1'>Announcement</span>
+                                    <span class='postcont'><a href="#">jarland</a></span>
+                                    <span class='postcont views'>2.9k views</span>
+                                    <span class='postcont comments'>29 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">tragic</a></span>
+                                    <span class='postcont date'>November 25</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Announcements</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/001.jpg'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">LowEndTalk Community Rules</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1'>Announcement</span>
+                                    <span class='postcont'><a href="#">jarland</a></span>
+                                    <span class='postcont views'>2.7k views</span>
+                                    <span class='postcont comments'>35 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">cheapwebdev</a></span>
+                                    <span class='postcont date'>November 16</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Announcements</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/003.jpg'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Where to put TOR Exit node</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">beardlyness</a></span>
+                                    <span class='postcont views'>474 views</span>
+                                    <span class='postcont comments'>35 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">rm_</a></span>
+                                    <span class='postcont date'>6:14PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Requests</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/004.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Is My Custom Hosting still active?</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">cygni</a></span>
+                                    <span class='postcont views'>945 views</span>
+                                    <span class='postcont comments'>21 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">jenkki</a></span>
+                                    <span class='postcont date'>6:03PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Providers</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/005.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Dacentec for Colo</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">alex0</a></span>
+                                    <span class='postcont views'>519 views</span>
+                                    <span class='postcont comments'>28 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">alex0</a></span>
+                                    <span class='postcont date'>6:01PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">General</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/006.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">OVH 2016 SSD VPS 1 Review?</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">ZweiTiger</a></span>
+                                    <span class='postcont views'>15.1k views</span>
+                                    <span class='postcont comments'>219 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">CUTA</a></span>
+                                    <span class='postcont date'>5:30PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Help</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/007.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">cheap local kvm for local voip server in berlin</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">clevergirl</a></span>
+                                    <span class='postcont views'>102 views</span>
+                                    <span class='postcont comments'>8 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">Butters</a></span>
+                                    <span class='postcont date'>5:28PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Requests</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/008.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Any vps for like less than $2</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">luzy</a></span>
+                                    <span class='postcont views'>102 views</span>
+                                    <span class='postcont comments'>8 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">luzy</a></span>
+                                    <span class='postcont date'>5:15PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Requests</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/009.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">ExtraVM - $3 DDoS Protected OVZ/KVM VPS (US/CA/FR) w/ SSD, IPv6</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">MikeA</a></span>
+                                    <span class='postcont views'>67 views</span>
+                                    <span class='postcont comments'>1 comment</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">dedicados</a></span>
+                                    <span class='postcont date'>5:03PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Offers</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/010.jpeg'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">time4vps slow transfer</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">elofty</a></span>
+                                    <span class='postcont views'>333 views</span>
+                                    <span class='postcont comments'>13 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">elofty</a></span>
+                                    <span class='postcont date'>4:53PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">General</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/011.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Dedicated w/2TB+ storage</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">chauffer</a></span>
+                                    <span class='postcont views'>68 views</span>
+                                    <span class='postcont comments'>4 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">College</a></span>
+                                    <span class='postcont date'>4:27PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Requests</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                <div class='col-md-12'> <!-- 1 POST -->
+                    <div class='row'>
+                        <div class='col-md-1 profpic'> <!-- prof pic-->
+                            <img src='img/profpics/012.png'>
+                        </div>
+                        
+                        <div class='col-md-9 postcontSpecial'>
+                            <div class='row'>
+                                <div class='col-md-12 postTitle'>
+                                    <a href="#">Why online.net selling SC sata 2016 when hdd is too slow</a>
+                                </div>
+                                
+                                <div class='col-md-12'>
+                                    <span class='postTag announce1 hidden'>Announcement</span>
+                                    <span class='postcont'><a href="#">xrz</a></span>
+                                    <span class='postcont views'>449 views</span>
+                                    <span class='postcont comments'>9 comments</span>
+                                    <span class='postcont commentdesc'>Most recent by <a href="#">Clouvider</a></span>
+                                    <span class='postcont date'>4:10PM</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <span class='postTagCat'><a href="#">Help</a></span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                </div>
+                
+                
+                <div class='col-md-12'>
+                
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li><a href="#" class='active'>1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="#">763</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                </div>
+                
             </div>
         </div>
         
@@ -148,6 +868,85 @@
             <div class='announce'>
                 <h5><strong>Howdy, Stranger!</strong></h5>
                 <p>It looks like you're new here. If you want to get involved, click one of these buttons!</p>
+                <a href="#" id='oid'><img src="img/oid.png" alt="Sign In with OpenID"></a>
+                <button class="btn btn-default">Sign In</button>
+                <button class="btn btn-default">Register</button>
+            </div>
+            
+            <div class='announce'>
+                <table class="table table-condensed">
+                    <tr><td><a href="#"><span class="Sprite SpAllCategories"></span>Categories</a></td></tr>
+                    <tr><td><a href="#"><span class="Sprite SpDiscussions"></span>Recent Discussions</a></td></tr>
+                </table>
+            </div>
+            
+            <div class='announce'>
+                <table class="table table-condensed">
+                    <tr><td><a href="#">Community Rules</a></td></tr>
+                    <tr><td><a href="#">Rules for Selling</a></td></tr>
+                    <tr><td><a href="#"><strong>Need help? Contact us!</strong></a></td></tr>
+                    <tr><td><a href="#">LowEndBox.Com</a></td></tr>
+                    <tr><td><a href="#">LowEndNetwork Twitter</a></td></tr>
+                </table>
+            </div>
+            
+            <a href="#">Advertise on LowEndTalk.com</a>
+            <div class='announce categories'>
+                <h5 class="nomarg"><strong>Categories</strong></h5>
+                <table class="table table-condensed">
+                    <tr><td><a href="#">All Categories<span class="viewcat">38.1k</span></a></td></tr>
+                    <tr><td><a href="#">Announcements<span class="viewcat">41</span></a></td></tr>
+                    <tr><td><a href="#">General<span class="viewcat">13.9k</span></a></td></tr>
+                    <tr><td><a href="#">Providers<span class="viewcat">2.6k</span></a></td></tr>
+                    <tr><td><a href="#">Outages<span class="viewcat">16</span></a></td></tr>
+                    <tr><td><a href="#">Reviews<span class="viewcat">919</span></a></td></tr>
+                    <tr><td><a href="#">Tutorials<span class="viewcat">368</span></a></td></tr>
+                    <tr><td><a href="#">Help<span class="viewcat">6.6k</span></a></td></tr>
+                    <tr><td><a href="#">Offers<span class="viewcat">6.9k</span></a></td></tr>
+                    <tr><td><a href="#">Shared Hosting Offers<span class="viewcat">157</span></a></td></tr>
+                    <tr><td><a href="#">Requests<span class="viewcat">5.1k</span></a></td></tr>
+                    <tr><td><a href="#">Domains<span class="viewcat">1.5k</span></a></td></tr>
+                </table>
+            </div>
+            
+            
+        
+            <div class='announce sidetag'>
+                <h5 class="nomarg"><strong>Popular Tags</strong></h5>
+                <ul>
+                    <li><a href="#">vps<span class="poptagview">1,708</span></a></li>
+                    <li><a href="#">openvz<span class="poptagview">949</span></a></li>
+                    <li><a href="#">kvm<span class="poptagview">889</span></a></li>
+                    <li><a href="#">#vps<span class="poptagview">578</span></a></li>
+                    <li><a href="#">cheap<span class="poptagview">464</span></a></li>
+                    <li><a href="#">ssd<span class="poptagview">411</span></a></li>
+                    <li><a href="#">ipv6<span class="poptagview">377</span></a></li>
+                    <li><a href="#">xen<span class="poptagview">325</span></a></li>
+                    <li><a href="#">ovh<span class="poptagview">289</span></a></li>
+                    <li><a href="#">solusvm<span class="poptagview">285</span></a></li>
+                    <li><a href="#">cheap vps<span class="poptagview">284</span></a></li>
+                    <li><a href="#">domain<span class="poptagview">275</span></a></li>
+                    <li><a href="#">dedicated<span class="poptagview">260</span></a></li>
+                    <li><a href="#">cpanel<span class="poptagview">256</span></a></li>
+                    <li><a href="#">#kvm<span class="poptagview">232</span></a></li>
+                    <li><a href="#">1gbps<span class="poptagview">227</span></a></li>
+                    <li><a href="#">whmcs<span class="poptagview">217</span></a></li>
+                    <li><a href="#">hosting<span class="poptagview">215</span></a></li>
+                    <li><a href="#">server<span class="poptagview">207</span></a></li>
+                    <li><a href="#">uk<span class="poptagview">207</span></a></li>
+                    <li><a href="#">backup<span class="poptagview">201</span></a></li>
+                    <li><a href="#">windows<span class="poptagview">200</span></a></li>
+                    <li><a href="#">vpn<span class="poptagview">199</span></a></li>
+                    <li><a href="#">#cheapvps<span class="poptagview">197</span></a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+        <div class="footer">
+                2008-2016 &copy; LowEndBox (part of the VSNX family). Powered by Vanilla. Times are UTC.
+            <div class="aside">
+                <button class="btn btn-default"><span class="twit"></span><strong>Follow @LowEndNetwork</strong></button>
             </div>
         </div>
     </div>
