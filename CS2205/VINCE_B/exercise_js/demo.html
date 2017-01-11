@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    
+    <body>
+        <button onClick='myEvent();'>Click Me!</button>
+        <!-- <input type='text' id='userInput'> -->
+        <!-- <div id='target'>University of San Carlos</div>-->
+        <input type='text' id='num1'>
+        <input type='text' id='num2'>
+        <span>=</span>
+        <input type 'text' id='ans' readonly>
+    </body>
+</html>
+
+<script>
+    //console.log("Hello World");
+    //document.write("Hello World");
+    //alert("Hello World");
+
+    var x = 0;
+    function myEvent()
+    {
+        //alert("hi!");
+        //var a = 5;
+        //var b = "hey";
+        
+        //console.log(a+b);
+        //document.getElementById("target").innerHTML += "<button onClick='dontClickMeEvt();'>Don't Click Me</button>";
+        
+        //var thatDiv = document.getElementById("target");
+        //thatDiv.innerHTML += "<button onClick='dontClickMeEvt();'>We are the crystal GEMS!</button>";
+        
+        //var x = document.getElementById("target").value;
+        //alert(x);
+        
+        //var name = document.getElementById("userInput").value;
+        //document.getElementById("target").textContent = "Hello " + name + ", nice to meet you!";
+        
+        //document.getElementById("target").style.color = "orange";
+        //var x = [];
+        //x[21] = 97;
+        //console.log(x);
+        
+        //var colors = ["blue", "red", "green", "yellow", "pink", "purple", "black"];        
+        //document.getElementById("target").style.color = colors[++x%colors.length];
+        
+        var num1 = parseInt( document.getElementById("num1").value );
+        var num2 = parseInt( document.getElementById("num1").value );
+        var answer = num1 + num2;
+        
+        
+    }
+    
+    function dontClickMeEvt()
+    {
+        alert("YOU CLICKED ME, YOU REBEL!");
+    }
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button {
+                padding: 10px 25px;
+                margin: 5px;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id='operands'>
+            <input type='text' id='num1'>
+            <input type='text' id='num2'>
+            <span>=</span>
+            <input type 'text' id='ans' readonly>
+        </div>
+        
+        <div id='operators'>
+            <button onClick='Addition();'>+</button>
+            <button onClick='Subtraction();'>-</button>
+            <button onClick='Multiplication();'>*</button>
+            <button onClick='Division();'>/</button>
+        </div>
+    </body>
+</html>
+
+<script>
+
+    function Addition()
+    {
+        var num1 = parseFloat( document.getElementById("num1").value );
+        var num2 = parseFloat( document.getElementById("num2").value );
+        
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Check Input");
+        } else {
+            document.getElementById("ans").value = num1+num2;
+        }
+    }
+    
+    function Subtraction()
+    {
+        var num1 = parseFloat( document.getElementById("num1").value );
+        var num2 = parseFloat( document.getElementById("num2").value );
+        
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Check Input");
+        } else {
+            document.getElementById("ans").value = num1-num2;
+        }
+    }
+    
+    function Multiplication()
+    {
+        var num1 = parseFloat( document.getElementById("num1").value );
+        var num2 = parseFloat( document.getElementById("num2").value );
+        
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Check Input");
+        } else {
+            document.getElementById("ans").value = num1*num2;
+        }
+    }
+    
+    function Division()
+    {
+        var num1 = parseFloat( document.getElementById("num1").value );
+        var num2 = parseFloat( document.getElementById("num2").value );
+        
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Check Input");
+        } else if (num2 ==0.0) {
+            alert("You are dividing by ZERO!");
+        } else {
+            document.getElementById("ans").value = num1/num2;
+        }
+    }
+</script>

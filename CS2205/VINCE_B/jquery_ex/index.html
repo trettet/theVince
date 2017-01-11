@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div.box {
+                width: 100px;
+                height: 100px;
+                color: white;
+                display: inline-block;
+            }
+            
+            .b1 {
+                background-color: red;
+            }
+            
+            .b2 {
+                background-color: green;
+            }
+            
+            .b3 {
+                background-color: blue;
+            }
+            
+            div.box2 {
+                margin-top: 10px;
+                width: 25px;
+                height: 25px;
+                background-color: #ff9d00;
+                transition: all 1s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <!--<button id="b1">How to</button>
+        <button id="b2">Be Strong In</button>
+        <button id="b3">The Real Way</button> -->
+        
+        <!-- ACTIVITY 1
+        <div class="box b1" alt="Good"></div>
+        <div class="box b2" alt="Bad"></div>
+        <div class="box b3" alt="Ugly"></div>
+        <p class="output"></p>
+        
+        -->
+        
+        <input type="text" id="size"/>
+        <button class="sizeTrigger">Resize!</button>
+        
+        <div class="box2">
+        </div>
+    </body>
+</html>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function(){
+        /*$("button").on("click", function(){
+            //var x = $(".box").css("width");
+            //console.log(x);
+            
+            //$(".box").css("background-color", "#921243");
+            
+            //$(this).css("margin-left", "+=15");
+            
+            //var x = $(this).attr("id");
+            //console.log(x);
+            
+            var x = $(".box").text();
+            console.log(x);
+        });*/
+        
+        /* ACTIVITY 1
+        $(".box").on("click", function(){
+            var color = $(this).css("background-color");
+            var alt = $(this).attr("alt");
+            $(".output").text("This elem is " + alt + " with color " + color );
+        });
+        */
+        
+        $(".sizeTrigger").on("click", function() {
+            var siz = parseInt( $("#size").val() );
+            
+            if (!isNaN(siz)) {
+                //$(".box2").css({"width": siz, "height": siz});
+                /*$(".box2").animate({
+                    "width" : siz,
+                    "height" : siz
+                }, 200);*/
+                
+               // $(".box2").hide();
+               // $(".box2").show();
+               // $(".box2").toggle();
+               
+               // $(".box2").fadeOut();
+               // $(".box2").fadeIn();
+               // $(".box2").fadeToggle();
+               
+               // $(".box2").slideUp();
+               // $(".box2").slideDown();
+               // $(".box2").slideToggle();
+            } else {
+                alert("Invalid input!");
+            }
+        });
+    });
+    
+</script>
