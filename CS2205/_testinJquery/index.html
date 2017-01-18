@@ -41,19 +41,21 @@
 
 <script>
     var prev;
-    var select;
+    var curr;
     $(document).ready(function(){
-        select = 0;
         
         $(".box").on("click", function() {
-            if (prev != null) {
-                $(prev).css("border-color", "black");
+            if (prev == curr && $(this).css("background-image") != "none") {
+				prev = $(this);
+				$(this).css("border-color", "#ff7b00");
+            } else if (prev != null) {
+				curr = $(this);
+				$(prev).css("border-color", "black");
                 $(prev).css("background-image", "none");
-            }
+				$(this).css("background-image", "url(\"img/1.jpg\")");
+				prev = curr = null;
+			}
             
-            prev = $(this);
-            $(this).css("border-color", "#ff7b00");
-            $(this).css("background-image", "url(\"img/1.jpg\")");
         });
     });
 </script>

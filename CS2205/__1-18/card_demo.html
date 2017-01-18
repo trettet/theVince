@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>Bootstrap 101 Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+    .card{
+        width:150px;
+        height:200px;
+        border:1px solid black;
+        margin: 20px;
+        float:left;
+    }
+    h3, .options, .img{
+        text-align:center;
+    }
+    .img-circle{
+        width:80%;
+    }
+    .options{
+        margin-top:20px;
+    }
+    
+    .btn {
+        padding: 3px;
+        font-size: 12px;
+    }
+	</style>
+  </head>
+  <body>
+  <div class='card'>
+    <h3>Card 1</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  <div class='card'>
+    <h3>Card 2</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  <div class='card'>
+    <h3>Card 3</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  <div class='card'>
+    <h3>Card 4</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  <div class='card'>
+    <h3>Card 5</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  <div class='card'>
+    <h3>Card 6</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  <div class='card'>
+    <h3>Card 7</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  <div class='card'>
+    <h3>Card 8</h3>
+    <div class='img'>
+        <img src="img/Koala.jpg" class="img-circle">
+    </div>
+    <div class='options'>
+    </div>
+  </div>
+  </body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".card").on("click", function() {
+        var sibs = $(this).siblings();
+        sibs.children("h3").css("font-weight", "normal");
+        sibs.css("background-color", "white");
+        $(sibs).children(".options").html(function() {
+            return "";
+        });
+        
+        $(this).css("background-color", "rgba(255, 193, 7, 0.22)");
+        $(this).children("h3").css("font-weight", "bold");
+        $(this).children(".options").html(function() {
+            return "<button class='btn btn-success'>SELECT CARD</button>";
+        });
+    });
+});
+</script>
+
+
+
+
