@@ -50,7 +50,7 @@
             } else if (prev != null) {
 				$(prev).css("border-color", "black");
                 
-                if ($(prev).css("background-image") != "none") {
+                if ($(prev).css("background-image") != "none" && $(this).css("background-image") == "none") {
                     $(prev).css("background-image", "none");
                     $(this).css("background-image", "url(\"img/1.jpg\")");
                 }
