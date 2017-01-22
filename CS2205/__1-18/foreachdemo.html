@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>Bootstrap 101 Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+    p {
+        transition: all 1.0s ease;
+    }
+	</style>
+  </head>
+  <body>
+    <button class="btn btn-danger">Click Me!</button>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+    <p>Paragraph 6</p>
+    <p>Paragraph 7</p>
+  </body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+var items = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+$(document).ready(function() {
+    $(".btn").on("click", function() {
+        $("p").each(function(ndx, obj) {
+            //var msg = $(this).text();
+            //console.log(msg);
+            //console.log(ndx);
+            $(obj).css("background-color", items[ndx]);
+        });
+        
+        // $(items).each(function() {
+        //     console.log($(this));
+        // });
+    });
+});
+</script>
+
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>Bootstrap 101 Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .panel, .panel-heading {
+            border-radius: 0px;
+        }
+        
+        .panel {
+            margin: 0px;
+        }
+        
+        .panel-body {
+            display: none;
+        }
+	</style>
+  </head>
+  <body>
+    <!-- <h1>Hello, world!</h1>
+    <p>
+        <span class='box'>Span1</span>
+        <span>Span2</span>
+        <span class='box'>Span3</span>
+        <span>Span4</span>
+        <span class='box'>Span5</span>
+    </p> -->
+    
+    <div class="wrapper">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">POKEMON PARTY</h3>
+            </div>
+            <div class="panel-body">
+                Pikachu | Totodile | Chikorita | Noctowl | .... | .... |
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">POKEMON PARTY</h3>
+            </div>
+            <div class="panel-body">
+                Pikachu | Totodile | Chikorita | Noctowl | .... | .... |
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">POKEMON PARTY</h3>
+            </div>
+            <div class="panel-body">
+                Pikachu | Totodile | Chikorita | Noctowl | .... | .... |
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">POKEMON PARTY</h3>
+            </div>
+            <div class="panel-body">
+                Pikachu | Totodile | Chikorita | Noctowl | .... | .... |
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">POKEMON PARTY</h3>
+            </div>
+            <div class="panel-body">
+                Pikachu | Totodile | Chikorita | Noctowl | .... | .... |
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("span").on("click", function() {
+        // var par = $(this).parent("p.box");
+        // $(par).css("background-color", "red");
+        // $(this).css("background-color", "green");
+        
+        // var sib = $(this).siblings();
+        // $(sib).css("background-color", "blue");
+        
+        // var sib = $(this).siblings();
+        // for(var x=0; x<sib.length; x++) {
+        //     $(sib[x]).css("background-color", "blue");
+        // }
+        
+        //var sib = $(this).next();
+        
+        // ACCORDION
+    });
+    
+    $(".panel").on("click", function() {
+        var sibs = $(this).siblings();
+        $(sibs).children(".panel-body").slideUp();
+        $(this).children(".panel-body").slideToggle();
+    });
+});
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>Bootstrap 101 Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+    .form-control{
+        width:80%;
+        margin:20px;
+    }
+    .valid{
+        border-color : #3c763d;
+    }
+    .error{
+        border-color : #a94442;
+    }
+    </style>
+  </head>
+  <body>
+  <button class='btn btn-danger'>Click</button>
+  <input type='text' class='form-control'>
+  <input type='text' class='form-control'>
+  <input type='text' class='form-control'>
+  <input type='text' class='form-control'>
+  <input type='text' class='form-control'>
+  </body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".btn").on("click", function(){
+        var error = 0;
+        $(".form-control").each(function(ndx, obj) {
+            if($(obj).val == "") {
+                $(obj).addClass("error");
+                error++;
+            } else {
+                $(obj).addClass("valid");
+            }
+        });
+        
+        if (error > 0) {
+            alert("Fill out completely!");
+        } else {
+            alert("Submit ok!");
+        }
+    });
+});
+</script>

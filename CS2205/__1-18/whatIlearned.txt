@@ -1,0 +1,12 @@
+i learned:
+ -- parent
+ -- sibling
+ -- children
+
+.addClass()
+.removeClass()
+.hasClass()
+
+.parent()
+.siblings()
+.children()
