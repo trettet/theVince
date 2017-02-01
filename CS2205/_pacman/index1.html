@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    img {
+        border: 2px solid black;
+        transition: all 0.35s ease;
+    }
+    
+    .placeholder {
+        font-size: 18em;
+        text-align: center;
+        display: block;
+    }
+    
+    .bigImg{
+        border: 2px solid black;
+        transition: all 0.35s ease;
+        width: 245px;
+        height: 350px;
+        transition: all 0.5s ease;
+    }
+    
+    .smallImg {
+        width: 101px;
+        height: 136px;
+        display: inline-block;
+    }
+    
+    .wrapper {
+        margin: 0 auto;
+        width: 70%;
+        padding-left: 5%;
+    }
+    
+    #front, #back {
+        margin: 0 auto;
+    }
+    
+    #back {
+        opacity: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h3 class="text-center">CS 2205 – Midterm Exam</h3>
+        </div>
+        <div class="row">
+            <div id="mainview" class="col-md-2 col-md-offset-3">
+                <div id="front" class="bigImg"><span class="placeholder">?</span></div>
+            </div>
+            <div id="mainview" class="col-md-2 col-md-offset-1">
+                <div id="back" class="bigImg"></div>
+            </div>
+        </div>
+        
+        <h4 class="text-center" id="maglabel">Select A Magazine</h4>
+        
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-2">
+                    <img class="smallImg" src="img/mag5.jpg">
+                </div>
+                
+                <div class="col-md-2">
+                    <img class="smallImg" src="img/mag4.jpg">
+                </div>
+                
+                <div class="col-md-2">
+                    <img class="smallImg" src="img/mag3.jpg">
+                </div>
+                
+                <div class="col-md-2">
+                    <img class="smallImg" src="img/mag2.jpg">
+                </div>
+                
+                <div class="col-md-2">
+                    <img class="smallImg" src="img/mag1.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+var curr = 0;
+var isClicked = 0;
+$(document).ready(function(){
+    $(".smallImg").on("click", function(){
+        isClicked = 0;
+        $(".placeholder").fadeOut();
+        $("#back").css("opacity", "0");
+        cur = getMagNum($(this).attr("src"));
+        $("#front").css("background-image", "url(\"" + $(this).attr("src") + "\")");
+        
+        $(this).css("box-shadow", "0px 0px 20px yellow");
+        $(this).parent().siblings().children("img").css("box-shadow", "none");
+        
+        $("#maglabel").text(getMagTitle(cur));
+    });
+    
+    $("#mainview").on("click", function() {   
+        if (cur != 0 && isClicked == 0) {
+            $("#back").css("opacity", "1");
+            $("#back").css("background-image", "url(\"img/mag" + cur + "_back.jpg");
+            $("#back").css("opacity", "1");
+            $("#maglabel").text($("#maglabel").text() + " (Front + Back)");
+            isClicked = 1;
+        }
+    });
+    
+    $("#back").on("click", function() {  
+        isClicked = 0;
+        $("#maglabel").text(getMagTitle(cur));
+        $("#back").css("opacity", "0");
+    });
+});
+
+function getMagNum(f) {
+    var i = f.substring(f.length-5, f.length-4);
+    return i;
+}
+
+function getMagTitle(f) {
+    switch(f) {
+        case "1": return "Techbyte";
+        case "2": return "Jazztime";
+        case "3": return "Nintendo Power";
+        case "4": return "Magazine";
+        default: return "Parent Child";
+    }
+}
+</script>

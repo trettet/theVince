@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    .wrapper {
+        margin: 0 auto;
+        width: 70%;
+        margin-top: 50px;
+    }
+    
+    .wrapper2 {
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="rowCount" placeholder="rows"></input>
+                </div>
+                
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="interval" placeholder="interval"></input>
+                </div>
+                
+                <div class="col-md-4">
+                    <button class="btn btn-success" id="btnGen">Generate</button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="wrapper2">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                        
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+var rowCount = 0;
+$(document).ready(function(){
+    $("#btnGen").on("click", function() {
+        $("table").children().remove();
+        rowCount = $("#rowCount").val();
+        for(var i=0; i<rowCount; i++) {
+            $("table").append("<tr>"+
+                                    "<td><input type='text' class='form-control intervalBox'></input></td>" +
+                                    "<td><button class='btn btn-danger btnDel'>x</button></td>" +
+                                "</tr>");
+        }
+        
+        $(".btnDel").on("click", function() {
+            $(this).parent().parent().fadeOut("slow", function() {
+                $(this).remove();
+                refreshInterval();
+            });
+        });
+        
+        refreshInterval();
+    });
+});
+
+function refreshInterval() {
+    var q = 0;
+    var b = parseInt($("#interval").val());
+    
+    $(".intervalBox").each(function() {
+        $(this).val(q+=b);
+    });
+}
+</script>
