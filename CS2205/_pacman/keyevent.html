@@ -11,8 +11,8 @@
 }
 
 .dots {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     position: absolute;
     background-color: white;
     border-radius: 2px;
@@ -68,9 +68,9 @@ function checkDots() {
         var topDist = $('.box').offset().top - $(this).offset().top;
         var leftDist = $('.box').offset().left - ($(this).offset().left + 8);
         
-        if (topDist >= -8 && topDist <= 8) {
-            if (leftDist >= -8 && leftDist <= 8) {
-                alert("hello");
+        if (topDist >= -15 && topDist <= 15) {
+            if (leftDist >= -15 && leftDist <= 15) {
+                $(this).hide();
             }
         }
     });
