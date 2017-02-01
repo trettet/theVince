@@ -11,13 +11,11 @@
 }
 
 .dots {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     position: absolute;
     background-color: white;
     border-radius: 2px;
-    left: 500px;
-    top: 250px;
 }
 
 body {
@@ -29,9 +27,6 @@ body {
     <!---<input type="text" class="user"></input>
     <p></p>-->
     <div class="box">
-    </div>
-    
-    <div class="dots">
     </div>
 </body>
 </html>
@@ -61,6 +56,15 @@ $(document).ready(function(){
             case 32: clearInterval(t_id); break;
         }
     });
+	
+	for(var i=0; i<15; i++) {
+		$("body").append("<div class='dots'></div>");
+	}
+	
+	$(".dots").each(function(){
+		$(this).css("left", Math.floor(Math.random() * ($(window).width() - 50)));
+		$(this).css("top", Math.floor(Math.random() * ($(window).height() - 50)));
+	});
 });
 
 function checkDots() {
@@ -68,8 +72,8 @@ function checkDots() {
         var topDist = $('.box').offset().top - $(this).offset().top;
         var leftDist = $('.box').offset().left - ($(this).offset().left + 8);
         
-        if (topDist >= -15 && topDist <= 15) {
-            if (leftDist >= -15 && leftDist <= 15) {
+        if (topDist >= -30 && topDist <= 30) {
+            if (leftDist >= -30 && leftDist <= 30) {
                 $(this).hide();
             }
         }
