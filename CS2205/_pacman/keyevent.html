@@ -5,9 +5,19 @@
 .box {
     width: 50px;
     height: 50px;
-    position: relative;
+    position: absolute;
     background-image: url("img/pacman.gif");
     background-size: contain;
+}
+
+.dots {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    left: 500px;
+    top: 250px;
 }
 
 body {
@@ -19,6 +29,9 @@ body {
     <!---<input type="text" class="user"></input>
     <p></p>-->
     <div class="box">
+    </div>
+    
+    <div class="dots">
     </div>
 </body>
 </html>
@@ -45,40 +58,62 @@ $(document).ready(function(){
             case 38: t_id = setInterval(moveUp,    20); break; // up_
             case 39: t_id = setInterval(moveRight, 20); break;// rgt
             case 40: t_id = setInterval(moveDown,  20); break; // dwn
+            case 32: clearInterval(t_id); break;
         }
     });
 });
 
+function checkDots() {
+    $(".dots").each(function(){
+        var topDist = $('.box').offset().top - $(this).offset().top;
+        var leftDist = $('.box').offset().left - ($(this).offset().left + 8);
+        
+        if (topDist >= -8 && topDist <= 8) {
+            if (leftDist >= -8 && leftDist <= 8) {
+                alert("hello");
+            }
+        }
+    });
+}
+
 function moveRight() {
-    if (parseInt($(".box").css("left")) <= $(window).width()-52) {
+    $(".box").css("transform", "rotate(180deg)");
+    if ($(".box").offset().left <= $(window).width()-60) {
         $(".box").css("left", "+=10");
-        $(".box").css("transform", "rotate(180deg)");
     } else {
         clearInterval(t_id);
     }
+    checkDots();
 }
 
 function moveLeft() {
-    if (parseInt($(".box").css("left")) >= 0) {
+    $(".box").css("transform", "none");
+    if ($(".box").offset().left >= 0) {
         $(".box").css("left", "-=10");
-        $(".box").css("transform", "none");
     } else {
         clearInterval(t_id);
     }
+    checkDots();
 }
 
 function moveUp() {
-    if (parseInt($(".box").css("top")) >= 0) {
+    $(".box").css("transform", "rotate(90deg)");
+    if ($(".box").offset().top >= 0) {
         $(".box").css("top", "-=10");
-        $(".box").css("transform", "rotate(90deg)");
     } else {
         clearInterval(t_id);
     }
+    checkDots();
 }
 
 function moveDown() {
-    $(".box").css("top", "+=10");
     $(".box").css("transform", "rotate(270deg)");
+    if ($(".box").offset().top <= $(window).height()-60) {
+        $(".box").css("top", "+=10");
+    } else {
+        clearInterval(t_id);
+    }
+    checkDots();
 }
 </script>
 
